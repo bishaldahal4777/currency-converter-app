@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Currency Converter</title>
+</head>
+<body>
+  <h2>💱 Currency Converter</h2>
+
+  <form method="get">
+    <input type="text" name="from_currency" placeholder="From (e.g. USD)" required>
+    <input type="text" name="to_currency" placeholder="To (e.g. NPR)" required>
+    <button type="submit">Convert</button>
+  </form>
+
+  {% if rate %}
+    <p>1 {{ request.GET.from_currency }} = {{ rate }} {{ request.GET.to_currency }}</p>
+  {% endif %}
+</body>
+</html>
